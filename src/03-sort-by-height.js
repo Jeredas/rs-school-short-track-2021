@@ -1,14 +1,14 @@
 function sortByHeight(arr) {
-  let newArr = arr.filter((i) => i > 0);
-  newArr = newArr.sort((a, b) => a - b);
+  const filtered = arr.filter((i) => i > 0).sort((a, b) => a - b);
   const result = [];
-  for (let i = 0; i < newArr.length; i++) {
+  for (let i = 0; i < arr.length; i++) {
     if (arr[i] === -1) {
       result.push(-1);
     } else {
-      result.push(newArr[i]);
-      newArr.splice(0, 1);
+      result.push(filtered[0]);
+      filtered.shift();
     }
   }
+  return result;
 }
 module.exports = sortByHeight;
